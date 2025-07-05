@@ -1,12 +1,17 @@
 {
   "name": "shri2025-performance",
   "version": "1.0.0",
-  "description": "Оптимизированная версия Яндекс.Дом",
+  "description": "Optimized performance version for SHRI 2025",
+  "main": "index.html",
   "scripts": {
-    "build": "esbuild app.js --minify --outfile=app.min.js",
-    "watch": "esbuild app.js --minify --outfile=app.min.js --watch"
+    "build": "esbuild src/main.jsx --bundle --minify --outfile=dist/bundle.js --format=iife --global-name=React",
+    "dev": "esbuild src/main.jsx --bundle --outfile=dist/bundle.js --format=iife --global-name=React --watch"
   },
   "devDependencies": {
     "esbuild": "^0.20.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }
