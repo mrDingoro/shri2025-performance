@@ -1,0 +1,12 @@
+{
+  "name": "shri2025-performance",
+  "version": "1.0.0",
+  "description": "Оптимизированная версия Яндекс.Дом",
+  "scripts": {
+    "build": "esbuild app.js --minify --outfile=app.min.js",
+    "watch": "esbuild app.js --minify --outfile=app.min.js --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  }
+}

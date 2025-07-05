@@ -1,0 +1,29 @@
+# Зависимости
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Файлы сборки
+dist/
+build/
+
+# Временные файлы
+.tmp/
+.temp/
+
+# Логи
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Минифицированные файлы (опционально - можно убрать если хотите их коммитить)
+# app.min.js
