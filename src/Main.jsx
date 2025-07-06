@@ -21,18 +21,57 @@ export function Main() {
         setActiveTab(event.target.value);
     };
 
-    let sizes = [];
+    const [sizes, setSizes] = useState([]);
+    const [visibleItems, setVisibleItems] = useState(50); // Показываем только первые 50 элементов
     const onSize = size => {
-        sizes = [...sizes, size];
+        setSizes(prev => [...prev, size]);
     };
 
     useEffect(() => {
-        const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
-        const newHasRightScroll = sumWidth > ref.current.offsetWidth;
-        if (newHasRightScroll !== hasRightScroll) {
-            setHasRightScroll(newHasRightScroll);
+        // Сбрасываем размеры при смене вкладки
+        setSizes([]);
+        setHasRightScroll(false);
+        setVisibleItems(50); // Сбрасываем количество видимых элементов
+    }, [activeTab]);
+
+    useEffect(() => {
+        if (sizes.length > 0 && ref.current) {
+            const sumWidth = sizes.reduce((acc, item) => acc + item.width, 0);
+            const newHasRightScroll = sumWidth > ref.current.offsetWidth;
+            if (newHasRightScroll !== hasRightScroll) {
+                setHasRightScroll(newHasRightScroll);
+            }
         }
-    });
+    }, [sizes, hasRightScroll]);
+
+    const loadMoreItems = () => {
+        setVisibleItems(prev => Math.min(prev + 50, TABS[activeTab]?.items.length || 0));
+    };
+
+    // Автоматическая подгрузка при прокрутке
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && visibleItems < (TABS[activeTab]?.items.length || 0)) {
+                        loadMoreItems();
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        const loadMoreBtn = document.querySelector('.load-more-btn');
+        if (loadMoreBtn) {
+            observer.observe(loadMoreBtn);
+        }
+
+        return () => {
+            if (loadMoreBtn) {
+                observer.unobserve(loadMoreBtn);
+            }
+        };
+    }, [visibleItems, activeTab]);
 
     const onArrowCLick = () => {
         const scroller = ref.current.querySelector('.section__panel:not(.section__panel_hidden)');
@@ -169,19 +208,35 @@ export function Main() {
                     </div>
 
                     <div className="section__panel-wrapper" ref={ref}>
-                        {TABS_KEYS.map(key =>
-                            <div key={key} role="tabpanel" className={'section__panel' + (key === activeTab ? '' : ' section__panel_hidden')} aria-hidden={key === activeTab ? 'false' : 'true'} id={`panel_${key}`} aria-labelledby={`tab_${key}`}>
-                                <ul className="section__panel-list">
-                                    {TABS[key].items.map((item, index) =>
-                                        <Event
-                                            key={index}
-                                            {...item}
-                                            onSize={onSize}
-                                        />
-                                    )}
-                                </ul>
-                            </div>
-                        )}
+                        <div role="tabpanel" className="section__panel" aria-hidden="false" id={`panel_${activeTab}`} aria-labelledby={`tab_${activeTab}`}>
+                            <ul className="section__panel-list">
+                                {TABS[activeTab]?.items.slice(0, visibleItems).map((item, index) =>
+                                    <Event
+                                        key={index}
+                                        {...item}
+                                        onSize={onSize}
+                                    />
+                                )}
+                            </ul>
+                            {visibleItems < (TABS[activeTab]?.items.length || 0) && (
+                                <button
+                                    className="load-more-btn"
+                                    onClick={loadMoreItems}
+                                    style={{
+                                        display: 'block',
+                                        margin: '20px auto',
+                                        padding: '10px 20px',
+                                        background: '#007bff',
+                                        color: 'white',
+                                        border: 'none',
+                                        borderRadius: '5px',
+                                        cursor: 'pointer'
+                                    }}
+                                >
+                                    Показать еще 50 элементов
+                                </button>
+                            )}
+                        </div>
                         {hasRightScroll &&
                             <div className="section__arrow" onClick={onArrowCLick}></div>
                         }
