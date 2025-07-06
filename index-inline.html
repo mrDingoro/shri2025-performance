@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Яндекс.Дом</title>
+    <style>
+        /* Reset CSS */
+        a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{border:0;font-size:100%;font:inherit;margin:0;padding:0;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}
+
+        /* Main Styles */
+        html{font-family:Arial,sans-serif;font-size:100%;line-height:1.25}body{display:flex;flex-direction:column;font-family:inherit;line-height:inherit;margin:0}body,html{height:100%}.a11y-hidden{height:1px;left:auto;overflow:hidden;position:absolute;top:0;width:1px;clip:rect(1px 1px 1px 1px)}.header{align-items:center;border-bottom:1px solid #f0f0f0;display:flex;flex:0 0 auto;font-family:Arial,sans-serif;height:5.75rem;margin-bottom:1.875rem;padding:0 2.5rem;position:relative}@media (max-width:768px){.header{border-bottom:none;height:4rem;margin-bottom:0;padding:0 0 0 1.25rem}}.header__logo{background:no-repeat 50% 50% url(assets/logo.svg);background-size:contain;flex:0 0 auto;height:2.3125rem;margin-right:3.25rem;width:6.75rem}.header__menu{appearance:none;background:50% 50% no-repeat transparent url(assets/icon_list_m@1x.svg);border:none;border-radius:0;cursor:pointer;display:none;height:100%;margin:0 0 0 auto;padding:0;width:3.5rem}@media (max-width:768px){.header__menu{display:block}}.header__links{display:flex;gap:1.75rem;list-style:none;margin:0;padding:0}@media (max-width:768px){.header__links{background:#fff;box-shadow:0 2px 6px 0 hsla(0,9%,75%,.5);box-sizing:border-box;display:none;flex-direction:column;left:0;padding:1.25rem;position:absolute;top:100%;width:100%;z-index:1}.header__links-toggled{animation:hideMenu .3s ease-in-out 1;animation-fill-mode:both;display:flex}.header__links_opened{animation:showMenu .3s ease-in-out 1;animation-fill-mode:both;display:flex;visibility:visible}}@keyframes showMenu{0%{opacity:0;transform:translateY(-1rem)}to{opacity:1;transform:translateY(0)}}@keyframes hideMenu{0%{opacity:1;transform:translateY(0);visibility:visible}to{opacity:0;transform:translateY(-1rem);visibility:hidden}}.header__item{margin:0;padding:0}.header__link{color:#333;font-weight:700;opacity:.6;text-decoration:none;transition:opacity .15s ease-in-out}.header__link:hover,.header__link_current{opacity:1}.main{display:grid;flex:0 0 auto;gap:1.625rem;grid-template-columns:50% 50%;padding:0 2.5rem}@media (max-width:768px){.main{padding:0 1.25rem}}@media (max-width:1024px){.main{grid-template-columns:100%}}.main__devices{grid-column-end:3;grid-column-start:1}@media (max-width:1024px){.main__devices{grid-column-end:2}}.section__title-header{color:#333;font-size:1.125rem;font-weight:700;margin:0}.section__title{align-items:baseline;display:flex;margin:0 0 1.25rem}@media (max-width:768px){.section__title{gap:1rem}.section__main-title{display:none}}.section__select{appearance:none;background:no-repeat calc(100% - 1rem) 50% #ffd93e url(assets/arrow-down.svg);border:none;border-radius:1.25rem;display:none;font-family:inherit;font-size:.8125rem;font-weight:700;margin:0 0 0 auto;padding:.4375rem 1.9375rem .5rem 1rem}@media (max-width:768px){.section__select{display:block}}.section__tabs{align-items:baseline;display:flex;gap:.625rem;list-style:none;margin:0 0 0 .8125rem;padding:0}@media (max-width:768px){.section__tabs{display:none}}.section__tab{background:#f7f7f7;border-radius:1024px;cursor:pointer;flex:0 0 auto;font-size:.8125rem;font-weight:700;padding:.4375rem .9375rem .5rem;transition:.25s ease-in-out;transition-property:background-color,box-shadow}.section__tab_active{background:#ffd93e}.section__tab:not(.section__tab_active):hover{background:#fff;box-shadow:0 2px 6px 0 hsla(0,9%,75%,.5)}.hero-dashboard{background:no-repeat 50% 50% url(assets/bg@2x.webp);background-size:1260px;border-radius:1.25rem;box-sizing:border-box;display:flex;gap:.9375rem;height:20.6875rem;position:relative}@media (max-width:768px){.hero-dashboard{background-image:url(assets/bg@2x.webp);flex-direction:column;gap:1.25rem;height:auto;margin-bottom:.3125rem}}.hero-dashboard__primary{flex:1 1 auto;padding:1.25rem 0 1.25rem 1.25rem}@media (max-width:768px){.hero-dashboard__primary{padding:1.25rem 1.25rem 0}}.hero-dashboard__title{color:#333;font-size:1.6875rem;font-weight:700;margin:.375rem 0}@media (max-width:768px){.hero-dashboard__title{font-size:1.125rem}}.hero-dashboard__subtitle{color:#333;font-size:.875rem;margin:.375rem 0 0}@media (max-width:768px){.hero-dashboard__subtitle{font-size:.75rem;margin:.3125rem 0 0}}.hero-dashboard__info{display:flex;gap:1.125rem;list-style:none;margin:1.5625rem 0 0;padding:0}@media (max-width:768px){.hero-dashboard__info{margin-top:.9375rem}}.hero-dashboard__item{margin:0;padding:0}.hero-dashboard__item-title{color:#858585;font-size:.875rem}@media (max-width:768px){.hero-dashboard__item-title{font-size:.75rem}}.hero-dashboard__item-details{align-items:center;color:#333;display:flex;font-size:2.25rem;font-weight:700;margin-top:.25rem}@media (max-width:768px){.hero-dashboard__item-details{font-size:1.5rem;margin-top:.3125rem}}.hero-dashboard__icon{background-position:50% 50%;background-repeat:no-repeat;background-size:contain;height:1.625rem;margin-left:.3125rem;width:1.625rem}@media (max-width:768px){.hero-dashboard__icon{height:1.375rem;width:1.375rem}}.hero-dashboard__icon_rain{background-image:url(assets/cloud-drizzle.svg)}.hero-dashboard__schedule{display:flex;flex:0 0 auto;flex-direction:column;gap:.9375rem;list-style:none;margin:0;overflow:auto;padding:1.25rem 1.5625rem 1.25rem 0;scrollbar-width:none}.hero-dashboard__schedule::-webkit-scrollbar{display:none}@media (max-width:768px){.hero-dashboard__schedule{flex-direction:row;padding:0 1.25rem 1.25rem}}.event__button{appearance:none;background:#f7f7f7;border:none;border-radius:1.25rem;cursor:pointer;display:flex;flex-direction:column;gap:.1875rem;height:7.5rem;justify-content:end;margin:0;min-width:12.5rem;padding:.875rem;position:relative;text-align:left;transition:.25s ease-in-out;transition-property:background-color,box-shadow;width:100%}.event_slim .event__button{height:6.25rem}.event__button:hover{background:#fff;box-shadow:0 2px 6px 0 hsla(0,9%,75%,.5)}.event__icon{background-position:50% 50%;background-repeat:no-repeat;background-size:contain;height:1.5rem;left:.875rem;position:absolute;top:.875rem;width:1.5rem}.event__icon_temp{background-image:url(assets/icon_temperature.svg)}.event__icon_temp2{background-image:url(assets/icon_temperature_2.svg)}.event__icon_light{background-image:url(assets/icon_sun.svg)}.event__icon_light2{background-image:url(assets/icon_sun_2.svg)}.event__icon_schedule{background-image:url(assets/icon_scheduled.svg)}.event__title{color:#333;font-size:.875rem;font-weight:700;margin:0}.event__subtitle{color:#858585;font-size:.75rem}.event-grid{display:grid;gap:.9375rem;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));list-style:none;margin:0;padding:0}@media (max-width:768px){.event-grid{display:flex;overflow:auto;padding-bottom:.3125rem;scrollbar-width:none}.event-grid::-webkit-scrollbar{display:none}}.section__panel{overflow-x:auto;padding-bottom:.625rem;scrollbar-width:none}.section__panel::-webkit-scrollbar{display:none}.section__panel_hidden{display:none}.section__panel-list{display:flex;gap:.9375rem;list-style:none;margin:0;padding:0}.section__panel-wrapper{position:relative}.section__arrow{background:no-repeat 50% 50% url(assets/arrow-left.webp);bottom:10px;cursor:pointer;position:absolute;right:0;top:0;transform:rotate(180deg);width:18px}.section__arrow:hover{opacity:.7}.footer{align-items:center;display:flex;flex:0 0 auto;height:4rem;margin-top:auto;padding:0 2.5rem}@media (max-width:768px){.footer{align-items:flex-start;flex-direction:column;gap:.9375rem;height:auto;padding-bottom:1rem;padding-top:1rem}}.footer__list{align-items:baseline;display:flex;gap:.9375rem;list-style:none;margin:0;padding:0}@media (max-width:768px){.footer__list{align-items:flex-start;flex-direction:column}}.footer__link{color:#858585;font-size:.75rem;text-decoration:none;transition:opacity .15s ease-in-out}.footer__link:hover{color:#000}.footer__copyright{color:#858585;font-size:.75rem;margin-left:auto}@media (max-width:768px){.footer__copyright{margin-left:0}}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__logo"></div>
+        <button class="header__menu" aria-label="Открыть меню"></button>
+        <nav class="header__links">
+            <ul class="header__links-list">
+                <li class="header__item"><a class="header__link header__link_current" href="/">Умный дом</a></li>
+                <li class="header__item"><a class="header__link" href="/">Устройства</a></li>
+                <li class="header__item"><a class="header__link" href="/">Сценарии</a></li>
+                <li class="header__item"><a class="header__link" href="/">Аналитика</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="main__devices">
+            <div class="section__title">
+                <h2 class="section__title-header section__main-title">Устройства</h2>
+                <select class="section__select">
+                    <option value="all">Все устройства</option>
+                    <option value="lights">Освещение</option>
+                    <option value="climate">Климат</option>
+                    <option value="security">Безопасность</option>
+                </select>
+                <ul class="section__tabs">
+                    <li class="section__tab section__tab_active">Все устройства</li>
+                    <li class="section__tab">Освещение</li>
+                    <li class="section__tab">Климат</li>
+                    <li class="section__tab">Безопасность</li>
+                </ul>
+            </div>
+
+            <div class="hero-dashboard">
+                <div class="hero-dashboard__primary">
+                    <h1 class="hero-dashboard__title">Добро пожаловать в умный дом</h1>
+                    <p class="hero-dashboard__subtitle">Управляйте всеми устройствами из одного места</p>
+                    <ul class="hero-dashboard__info">
+                        <li class="hero-dashboard__item">
+                            <div class="hero-dashboard__item-title">Температура</div>
+                            <div class="hero-dashboard__item-details">22°<span class="hero-dashboard__icon hero-dashboard__icon_rain"></span></div>
+                        </li>
+                        <li class="hero-dashboard__item">
+                            <div class="hero-dashboard__item-title">Влажность</div>
+                            <div class="hero-dashboard__item-details">45%</div>
+                        </li>
+                        <li class="hero-dashboard__item">
+                            <div class="hero-dashboard__item-title">Освещение</div>
+                            <div class="hero-dashboard__item-details">75%</div>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="hero-dashboard__schedule">
+                    <li class="event event_slim">
+                        <button class="event__button">
+                            <div class="event__icon event__icon_temp"></div>
+                            <div class="event__title">Термостат</div>
+                            <div class="event__subtitle">22° • Включен</div>
+                        </button>
+                    </li>
+                    <li class="event event_slim">
+                        <button class="event__button">
+                            <div class="event__icon event__icon_light"></div>
+                            <div class="event__title">Освещение</div>
+                            <div class="event__subtitle">75% • Авто</div>
+                        </button>
+                    </li>
+                    <li class="event event_slim">
+                        <button class="event__button">
+                            <div class="event__icon event__icon_schedule"></div>
+                            <div class="event__title">Расписание</div>
+                            <div class="event__subtitle">3 активных</div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="section__panel">
+                <ul class="event-grid" id="eventGrid">
+                    <!-- Events will be populated by JavaScript -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <ul class="footer__list">
+            <li class="footer__item"><a class="footer__link" href="/">Помощь</a></li>
+            <li class="footer__item"><a class="footer__link" href="/">Обратная связь</a></li>
+            <li class="footer__item"><a class="footer__link" href="/">Разработчикам</a></li>
+            <li class="footer__item"><a class="footer__link" href="/">Условия использования</a></li>
+        </ul>
+        <div class="footer__copyright">© 1997–2023 ООО «Яндекс»</div>
+    </footer>
+
+    <script>
+        // Event data
+        const events = [
+            { id: 1, title: 'Термостат', subtitle: '22° • Включен', icon: 'temp', type: 'climate' },
+            { id: 2, title: 'Освещение', subtitle: '75% • Авто', icon: 'light', type: 'lights' },
+            { id: 3, title: 'Расписание', subtitle: '3 активных', icon: 'schedule', type: 'schedule' },
+            { id: 4, title: 'Камера', subtitle: 'Онлайн', icon: 'security', type: 'security' },
+            { id: 5, title: 'Датчик движения', subtitle: 'Неактивен', icon: 'motion', type: 'security' },
+            { id: 6, title: 'Датчик дыма', subtitle: 'Норма', icon: 'smoke', type: 'security' },
+            { id: 7, title: 'Увлажнитель', subtitle: '45% • Выкл', icon: 'humidity', type: 'climate' },
+            { id: 8, title: 'Кондиционер', subtitle: '22° • Вкл', icon: 'ac', type: 'climate' },
+            { id: 9, title: 'Люстра', subtitle: '100% • Вкл', icon: 'chandelier', type: 'lights' },
+            { id: 10, title: 'Бра', subtitle: '50% • Вкл', icon: 'sconce', type: 'lights' },
+            { id: 11, title: 'Торшер', subtitle: '25% • Вкл', icon: 'floor-lamp', type: 'lights' },
+            { id: 12, title: 'Настольная лампа', subtitle: '75% • Вкл', icon: 'desk-lamp', type: 'lights' }
+        ];
+
+        // Generate 512 events by repeating the base events
+        const generateEvents = () => {
+            const allEvents = [];
+            const repetitions = Math.ceil(512 / events.length);
+
+            for (let i = 0; i < repetitions; i++) {
+                events.forEach((event, index) => {
+                    if (allEvents.length < 512) {
+                        allEvents.push({
+                            ...event,
+                            id: allEvents.length + 1,
+                            title: `${event.title} ${allEvents.length + 1}`
+                        });
+                    }
+                });
+            }
+
+            return allEvents;
+        };
+
+        // Render events
+        const renderEvents = (eventsToRender) => {
+            const grid = document.getElementById('eventGrid');
+            grid.innerHTML = '';
+
+            eventsToRender.forEach(event => {
+                const li = document.createElement('li');
+                li.className = 'event';
+                li.innerHTML = `
+                    <button class="event__button">
+                        <div class="event__icon event__icon_${event.icon}"></div>
+                        <div class="event__title">${event.title}</div>
+                        <div class="event__subtitle">${event.subtitle}</div>
+                    </button>
+                `;
+                grid.appendChild(li);
+            });
+        };
+
+        // Tab functionality
+        const initTabs = () => {
+            const tabs = document.querySelectorAll('.section__tab');
+            const select = document.querySelector('.section__select');
+
+            const filterEvents = (type) => {
+                const allEvents = generateEvents();
+                if (type === 'all') {
+                    renderEvents(allEvents);
+                } else {
+                    const filtered = allEvents.filter(event => event.type === type);
+                    renderEvents(filtered);
+                }
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('section__tab_active'));
+                    tab.classList.add('section__tab_active');
+
+                    const type = tab.textContent.toLowerCase();
+                    if (type === 'все устройства') filterEvents('all');
+                    else if (type === 'освещение') filterEvents('lights');
+                    else if (type === 'климат') filterEvents('climate');
+                    else if (type === 'безопасность') filterEvents('security');
+                });
+            });
+
+            select.addEventListener('change', (e) => {
+                filterEvents(e.target.value);
+            });
+        };
+
+        // Mobile menu functionality
+        const initMobileMenu = () => {
+            const menuButton = document.querySelector('.header__menu');
+            const menuLinks = document.querySelector('.header__links');
+
+            menuButton.addEventListener('click', () => {
+                menuLinks.classList.toggle('header__links_opened');
+            });
+        };
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            renderEvents(generateEvents());
+            initTabs();
+            initMobileMenu();
+        });
+    </script>
+</body>
+</html>
