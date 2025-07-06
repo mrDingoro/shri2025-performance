@@ -4,8 +4,8 @@
   "description": "Optimized performance version for SHRI 2025",
   "main": "index.html",
   "scripts": {
-    "build": "esbuild src/main.jsx --bundle --minify --outfile=dist/bundle.js --format=iife --global-name=React",
-    "dev": "esbuild src/main.jsx --bundle --outfile=dist/bundle.js --format=iife --global-name=React --watch"
+    "build": "esbuild src/main.jsx --bundle --minify --outfile=dist/bundle.js --format=iife --tree-shaking=true --drop:console --drop:debugger",
+    "dev": "esbuild src/main.jsx --bundle --outfile=dist/bundle.js --format=iife --watch"
   },
   "devDependencies": {
     "esbuild": "^0.20.0"
