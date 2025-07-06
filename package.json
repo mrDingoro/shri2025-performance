@@ -7,7 +7,9 @@
     "build": "esbuild src/Main.jsx --bundle --minify --outfile=dist/bundle.js --format=iife --tree-shaking=true --drop:console --drop:debugger --jsx=automatic --minify-whitespace --minify-identifiers --minify-syntax",
     "dev": "esbuild src/Main.jsx --bundle --outfile=dist/bundle.js --format=iife --watch --jsx=automatic",
     "minify-css": "postcss styles.original.css -o styles.css && postcss reset.original.css -o reset.css",
-    "build-full": "npm run minify-css && npm run build"
+    "minify-svg": "node scripts/minify-svg.js",
+    "inline-svg": "node scripts/inline-svg.js",
+    "build-full": "npm run minify-css && npm run minify-svg && npm run build"
   },
   "devDependencies": {
     "cssnano": "^7.0.7",
