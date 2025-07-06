@@ -6,7 +6,7 @@
   "scripts": {
     "build": "esbuild src/Main.jsx --bundle --minify --outfile=dist/bundle.js --format=iife --tree-shaking=true --drop:console --drop:debugger --jsx=automatic --minify-whitespace --minify-identifiers --minify-syntax",
     "dev": "esbuild src/Main.jsx --bundle --outfile=dist/bundle.js --format=iife --watch --jsx=automatic",
-    "minify-css": "postcss styles.css -o styles.min.css && postcss reset.css -o reset.min.css -c postcss.config.reset.js",
+    "minify-css": "cat reset.css styles.css > combined.css && postcss combined.css -o styles.min.css && rm combined.css",
     "build-critical": "node scripts/build-critical.js",
     "build-full": "npm run build-critical && npm run build"
   },

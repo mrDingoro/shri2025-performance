@@ -14,8 +14,7 @@ function extractCriticalCSS() {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Яндекс.Дом</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles.min.css">
 </head>
 <body>
     <div id="app"></div>
@@ -119,8 +118,7 @@ function main() {
         // 1. Извлекаем критические стили и обновляем HTML
         extractCriticalCSS();
 
-        // 2. Собираем некритические стили
-        buildNonCriticalCSS();
+        // 2. Некритические стили уже созданы в minify-css
 
         console.log('\n✨ Сборка завершена!');
         console.log('📄 HTML содержит критические стили инлайн');
