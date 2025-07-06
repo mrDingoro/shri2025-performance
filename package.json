@@ -4,11 +4,16 @@
   "description": "Optimized performance version for SHRI 2025",
   "main": "index.html",
   "scripts": {
-    "build": "esbuild src/main.jsx --bundle --minify --outfile=dist/bundle.js --format=iife --tree-shaking=true --drop:console --drop:debugger",
-    "dev": "esbuild src/main.jsx --bundle --outfile=dist/bundle.js --format=iife --watch"
+    "build": "esbuild src/main.jsx --bundle --minify --outfile=dist/bundle.js --format=iife --tree-shaking=true --drop:console --drop:debugger --jsx=automatic",
+    "dev": "esbuild src/main.jsx --bundle --outfile=dist/bundle.js --format=iife --watch --jsx=automatic",
+    "minify-css": "postcss styles.original.css -o styles.css && postcss reset.original.css -o reset.css",
+    "build-full": "npm run minify-css && npm run build"
   },
   "devDependencies": {
-    "esbuild": "^0.20.0"
+    "cssnano": "^7.0.7",
+    "esbuild": "^0.20.0",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1"
   },
   "dependencies": {
     "react": "^18.3.1",
