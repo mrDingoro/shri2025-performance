@@ -7,8 +7,7 @@
     "build": "esbuild src/Main.jsx --bundle --minify --outfile=dist/bundle.js --format=iife --tree-shaking=true --drop:console --drop:debugger --jsx=automatic --minify-whitespace --minify-identifiers --minify-syntax",
     "dev": "esbuild src/Main.jsx --bundle --outfile=dist/bundle.js --format=iife --watch --jsx=automatic",
     "minify-css": "postcss styles.original.css -o styles.css && postcss reset.original.css -o reset.css",
-    "add-versioning": "node scripts/add-versioning.js",
-    "build-full": "npm run minify-css && npm run build && npm run add-versioning"
+    "build-full": "npm run minify-css && npm run build"
   },
   "devDependencies": {
     "cssnano": "^7.0.7",
