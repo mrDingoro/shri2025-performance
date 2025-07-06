@@ -1,0 +1,32 @@
+# Кеширование для статических ресурсов
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/dist/*
+  Cache-Control: public, max-age=31536000, immutable
+
+*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+*.avif
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML файлы - кешируем на меньшее время
+*.html
+  Cache-Control: public, max-age=3600
+
+# Главная страница
+/
+  Cache-Control: public, max-age=3600
