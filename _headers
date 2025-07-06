@@ -5,26 +5,50 @@
 /dist/*
   Cache-Control: public, max-age=31536000, immutable
 
-*.css
+/styles.css
   Cache-Control: public, max-age=31536000, immutable
 
-*.js
+/reset.css
   Cache-Control: public, max-age=31536000, immutable
 
-*.svg
+/dist/bundle.js
   Cache-Control: public, max-age=31536000, immutable
 
-*.png
+/assets/bg@2x.avif
   Cache-Control: public, max-age=31536000, immutable
 
-*.webp
+/assets/bg@2x.webp
   Cache-Control: public, max-age=31536000, immutable
 
-*.avif
+/assets/bg@2x.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/logo.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/cloud-drizzle.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/arrow-left.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/icon_temperature.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/icon_temperature_2.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/icon_sun.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/icon_sun_2.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/icon_scheduled.svg
   Cache-Control: public, max-age=31536000, immutable
 
 # HTML файлы - кешируем на меньшее время
-*.html
+/index.html
   Cache-Control: public, max-age=3600
 
 # Главная страница

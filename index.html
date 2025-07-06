@@ -9,9 +9,10 @@
     <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
 
         <!-- Preload критических ресурсов -->
-    <link rel="preload" as="style" href="reset.css">
-    <link rel="preload" as="style" href="styles.css">
-    <link rel="preload" as="script" href="dist/bundle.js">
+    <link rel="preload" as="image" href="assets/bg@2x.avif" type="image/avif" fetchpriority="high">
+    <link rel="preload" as="style" href="reset.css" fetchpriority="high">
+    <link rel="preload" as="style" href="styles.css" fetchpriority="high">
+    <link rel="preload" as="script" href="dist/bundle.js" fetchpriority="low">
 
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
